@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 80%;
+    margin: auto;
+    background-color: rgb(181, 174, 174);
+    text-align: center;
+}
+header{
+    text-align: center;
+    margin: auto;
+}
+
+nav {
+    float: left;
+    width: 28%;
+}
+
+nav > ul{
+    list-style-type: none;
+}
+
+nav > ul > li{
+    font-size: 1.5em;
+}
+
+main {
+    float: left;
+    width: 28%;
+}
+
+.zdjecie {
+    display: none;
+    position: absolute;
+    height: 340px;
+    width: 490px;
+}
+
+main > h2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+main > ul{
+    display: flex;
+    list-style-type: none;
+    width: 40%;
+    justify-content: space-between;
+    row-gap: 30px;
+
+}
+main > input {
+    width: 10em;
+    height: 1em;
+    margin: 1em;
+}
+
+.kwadrat {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-color: black;
+    border-radius: 2px;
+    background-color: white;
+    height: 350px;
+    width: 500px;
+}
+
+#oblicz {
+    width: 7em;
+    height: 2em;
+}
+
+main > ul > li > button{
+    width: 10em;
+    height: 3em;
+    margin: 1em;
+    
+}
+
+main>input{
+    width: 10em;
+    height: 2em;
+}
+
+aside {
+    display: flex;
+    flex-wrap: wrap;
+    width: 28%;
+    justify-content: center;
+    float: right;
+}
+
+aside > p {
+    font-size: 30px
+}
+
+p{
+    font-size: 1.2em;
+}
+
+
+form > input {
+    width: 10em;
+    height: 2em;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

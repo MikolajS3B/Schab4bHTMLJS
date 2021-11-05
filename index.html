@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Skup złomu "BRATAN"</title>
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>SKUP ZŁOMU "BRATAN"</h1>
+  </header>
+
+  <nav>
+    <h2>CENNIK (zł za kg):</h2>
+    <ul>
+      <li>puszki aluminiowe: 4,50</li>
+      <li>żeliwo: 0,70</li>
+      <li>miedź: 21</li>
+      <li>brąz: 12</li>
+      <li>ołów: 4</li>
+    </ul>
+  </nav>
+  <main>
+    <h2>KALKULATOR CENY ZŁOMU</h2>
+    <ul>
+      <li><button id="puszki" onclick="puszki(),zdjPuszki();">puszki</button></li>
+      <li><button id="zeliwo" onclick="zeliwo(),zdjZeliwo();">żeliwo</button></li>
+      <li><button id="miedz" onclick="miedz(),zdjMiedz();">miedź</button></li>
+      <li><button id="braz" onclick="braz(),zdjBraz();">brąz</button></li>
+      <li><button id="olow" onclick="olow(),zdjOlow();">ołów</button></li>
+    </ul>
+    <div class="kwadrat" id="zdjecie">
+      <img src="zdjecia/puszki.jpg" alt="puszki" class="zdjecie" id="zdjPuszki">
+      <img src="zdjecia/zeliwo.jpg" alt="zeliwo" class="zdjecie" id="zdjZeliwo">
+      <img src="zdjecia/miedz.jpg" alt="miedz" class="zdjecie" id="zdjMiedz">
+      <img src="zdjecia/braz.jpg" alt="braz" class="zdjecie" id="zdjBraz">
+      <img src="zdjecia/olow.jpg" alt="olow" class="zdjecie" id="zdjOlow">
+    </div>
+    <input type="text" id="rodzaj" placeholder="wybrany złom" style="color: black" disabled />
+    <input type="number" id="waga" placeholder="waga złomu (w kg)" />
+    <input type="text" id="wycena" placeholder="wycena (w zł)" style="color: black" disabled />
+    <button id="oblicz" onclick="kalkulator();">Wyceń</button>
+  </main>
+  <aside>
+    <h1>
+      Oddział Gliwice
+    </h1>
+    <p>
+      ulica Bojkowska 23
+      tel. 123456789
+      otwarty:
+      pon - pt: 9:00 - 17:00
+    </p>
+  </aside>
+  <form method="POST">
+    <h3>NIEZBĘDNE DANE</h3>
+    <input type="text" name="imie" id="imie" placeholder="imię" />
+    <input type="text" name="nazwisko" id="nazwisko" placeholder="nazwisko" />
+    <input type="text" name="miasto zamieszkania" id="miasto" placeholder="miasto" />
+    <input type="text" name="ulica i nr budynku" id="ul_nr" placeholder="ulica np. Zwycięstwa 1" />
+    <input type="email" name="mail" id="mail" placeholder="e-mail" />
+    <input type="tel" name="tel" id="tel" placeholder="nr telefonu" />
+    <button type="submit">Wyślij</button>
+  </form>
+
+  <footer>&copy; Mikołaj Schab 2021</footer>
+  <script>
+    function puszki() {
+      let a = document.getElementById("rodzaj");
+      a.value = "puszki";
+    }
+    function zeliwo() {
+      let a = document.getElementById("rodzaj");
+      a.value = "zeliwo";
+    }
+    function miedz() {
+      let a = document.getElementById("rodzaj");
+      a.value = "miedz";
+    }
+    function braz() {
+      let a = document.getElementById("rodzaj");
+      a.value = "braz";
+    }
+    function olow() {
+      let a = document.getElementById("rodzaj");
+      a.value = "olow";
+    }
+
+    function kalkulator() {
+      let x = document.getElementById("waga").value;
+      function wybor() {
+        let y = 0;
+        let r = document.getElementById("rodzaj").value;
+        switch (r) {
+          case "puszki":
+            return (y = 4.5);
+            break;
+          case "zeliwo":
+            return (y = 0.7);
+            break;
+          case "miedz":
+            return (y = 21);
+            break;
+          case "braz":
+            return (y = 12);
+            break;
+          case "olow":
+            return (y = 4);
+            break;
+        }
+      }
+      let b = document.getElementById("wycena");
+      b.value = Math.floor(x * wybor());
+    }
+
+    function zdjPuszki() {
+      let g = document.getElementById("zdjPuszki");
+      g.style.display = "block";
+      let a = document.getElementById("zdjZeliwo");
+      a.style.display = "none";
+      let b = document.getElementById("zdjMiedz");
+      b.style.display = "none";
+      let c = document.getElementById("zdjBraz");
+      c.style.display = "none";
+      let d = document.getElementById("zdjOlow");
+      d.style.display = "none";
+    }
+
+    function zdjZeliwo() {
+      let g = document.getElementById("zdjZeliwo");
+      g.style.display = "block";
+      let a = document.getElementById("zdjPuszki");
+      a.style.display = "none";
+      let b = document.getElementById("zdjMiedz");
+      b.style.display = "none";
+      let c = document.getElementById("zdjBraz");
+      c.style.display = "none";
+      let d = document.getElementById("zdjOlow");
+      d.style.display = "none";
+    }
+
+    function zdjMiedz() {
+      let g = document.getElementById("zdjMiedz");
+      g.style.display = "block";
+      let a = document.getElementById("zdjZeliwo");
+      a.style.display = "none";
+      let b = document.getElementById("zdjPuszki");
+      b.style.display = "none";
+      let c = document.getElementById("zdjBraz");
+      c.style.display = "none";
+      let d = document.getElementById("zdjOlow");
+      d.style.display = "none";
+    }
+
+    function zdjBraz() {
+      let g = document.getElementById("zdjBraz");
+      g.style.display = "block";
+      let a = document.getElementById("zdjZeliwo");
+      a.style.display = "none";
+      let b = document.getElementById("zdjMiedz");
+      b.style.display = "none";
+      let c = document.getElementById("zdjPuszki");
+      c.style.display = "none";
+      let d = document.getElementById("zdjOlow");
+      d.style.display = "none";
+    }
+
+    function zdjOlow() {
+      let g = document.getElementById("zdjOlow");
+      g.style.display = "block";
+      let a = document.getElementById("zdjZeliwo");
+      a.style.display = "none";
+      let b = document.getElementById("zdjMiedz");
+      b.style.display = "none";
+      let c = document.getElementById("zdjBraz");
+      c.style.display = "none";
+      let d = document.getElementById("zdjPuszki");
+      d.style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
